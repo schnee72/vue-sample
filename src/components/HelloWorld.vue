@@ -1,14 +1,18 @@
 <template>
   <div>
     <p>hello world!</p>
+    <p>{{something}}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: "HelloWorld",
+  data() {
+    return { something: "This is some text!" };
+  },
   mounted() {
-    console.log("hello world!");
+    console.log("Hello World!");
     console.log(process.env.NODE_ENV);
   }
 };
@@ -16,6 +20,6 @@ export default {
 
 <style lang="scss">
 p {
-  color: yellowgreen;
+  color: lightcoral;
 }
 </style>

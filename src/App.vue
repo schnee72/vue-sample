@@ -23,7 +23,8 @@ body {
   font-family: monospace;
 
   p {
-    font-size: 28px;
+    font-size: 16px;
+    font-weight: bold;
   }
 }
 </style>
