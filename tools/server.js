@@ -24,6 +24,9 @@ const config = {
   }
 };
 
+config.plugins.push(new webpack.HotModuleReplacementPlugin());
+config.plugins.push(new webpack.NoEmitOnErrorsPlugin());
+
 const bundler = webpack(config);
 
 app.use(morgan('dev'));

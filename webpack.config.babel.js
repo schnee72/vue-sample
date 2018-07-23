@@ -1,10 +1,7 @@
-import webpack from 'webpack';
-import path from 'path';
 import { VueLoaderPlugin } from 'vue-loader';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-  mode: 'production',
   module: {
     rules: [
       {
@@ -37,17 +34,10 @@ export default {
     ]
   },
   plugins: [
-    //new webpack.HotModuleReplacementPlugin(),
-    //new webpack.NoEmitOnErrorsPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: 'public/favicon.ico'
     })
-  ],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: './',
-    filename: '[name].[chunkhash].js'
-  }
+  ]
 };
