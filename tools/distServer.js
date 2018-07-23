@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 import express from 'express';
 import path from 'path';
 import open from 'open';

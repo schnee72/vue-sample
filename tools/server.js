@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 import express from 'express';
 import open from 'open';
 import path from 'path';
@@ -8,7 +10,7 @@ import historyApiFallback from 'connect-history-api-fallback';
 import morgan from 'morgan';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-process.env.NODE_ENV = 'development'
+process.env.NODE_ENV = 'development';
 
 const port = process.env.PORT || 1337;
 const app = express();

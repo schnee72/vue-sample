@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 import webpack from 'webpack';
 import path from 'path';
 import webpackConfig from '../webpack.config.babel';
