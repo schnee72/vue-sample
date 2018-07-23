@@ -2,6 +2,9 @@ import webpack from 'webpack';
 import path from 'path';
 import webpackConfig from '../webpack.config.babel';
 import chalk from 'chalk';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 process.env.NODE_ENV = 'production';
 
@@ -11,8 +14,26 @@ const config = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].[chunkhash].js'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
   }
 };
+
+config.plugins.push(new MiniCssExtractPlugin({
+  filename: '[name].[chunkhash].css',
+  chunkFilename: '[id].[chunkhash].css'
+}));
 
 console.log(chalk.blue('Generating minified bundle for production...'));
 

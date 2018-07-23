@@ -6,6 +6,7 @@ import webpackConfig from '../webpack.config.babel';
 import chalk from 'chalk';
 import historyApiFallback from 'connect-history-api-fallback';
 import morgan from 'morgan';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 process.env.NODE_ENV = 'development'
 
@@ -27,6 +28,11 @@ const config = {
 
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 config.plugins.push(new webpack.NoEmitOnErrorsPlugin());
+
+config.plugins.push(new MiniCssExtractPlugin({
+  filename: '[name].css',
+  chunkFilename: '[id].css'
+}));
 
 const bundler = webpack(config);
 
