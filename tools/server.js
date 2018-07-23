@@ -21,7 +21,8 @@ const config = {
   ],
   output: {
     publicPath: '/'
-  }
+  },
+  devtool: 'cheap-module-eval-source-map'
 };
 
 config.plugins.push(new webpack.HotModuleReplacementPlugin());

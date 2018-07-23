@@ -39,5 +39,10 @@ export default {
       template: './public/index.html',
       favicon: 'public/favicon.ico'
     })
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
 };
