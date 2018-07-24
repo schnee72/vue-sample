@@ -1,18 +1,17 @@
 <template>
   <div id="app">
+    <nav>
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+    </nav>
     <h1>Vue Sample App</h1>
-    <HelloWorld />
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
-  name: "App",
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 };
 </script>
 
