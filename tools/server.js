@@ -17,8 +17,8 @@ app.use(morgan('dev'));
 app.use(historyApiFallback());
 app.use(require("webpack-hot-middleware")(bundler));
 app.use(require('webpack-dev-middleware')(bundler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
+  publicPath: config.output.publicPath,
+  noInfo: true
 }));
 
 app.listen(port, err => {
