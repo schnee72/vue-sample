@@ -6,22 +6,21 @@
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data() {
-    return { something: 'This is some text!' };
-  },
-  mounted() {
-    console.log('Hello World!');
-    console.log(process.env.NODE_ENV);
-  }
-};
+  export default {
+    name: 'HelloWorld',
+    data() {
+      return { something: 'This is some text!' };
+    },
+    mounted() {
+      console.log('Hello World!');
+    }
+  };
 </script>
 
 <style lang="scss">
-#home {
-  p {
-    color: lightcoral;
+  #home {
+    p {
+      color: lightcoral;
+    }
   }
-}
 </style>
